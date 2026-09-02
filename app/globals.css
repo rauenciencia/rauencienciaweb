@@ -1,0 +1,213 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   MUNDO: cartel de convocatoria serigrafiado.
+   Tintas planas sobre papel bond barato. Sin degradados, sin sombras suaves,
+   sin vidrio. La profundidad la da la sobreimpresión de tintas (multiply) y
+   el desfase de registro, que es lo que pasa de verdad cuando una prensa
+   serigráfica no calza las capas.
+   ========================================================================== */
+
+@theme {
+  /* --- Tintas ---------------------------------------------------------- */
+  --color-papel: #f0e7d3;
+  --color-papel-hueco: #e4d9c1;
+  --color-tinta: #16130f;
+  --color-naranja: #ff4a1c;
+  --color-verde: #6fcf3f;
+  --color-azul: #1b39e8;
+
+  /* Sobre naranja y verde el texto va en tinta (5.5:1 y 9.4:1).
+     Sobre azul el texto va en papel (7.4:1). Nunca al revés. */
+
+  /* --- Tipografía ------------------------------------------------------ */
+  --font-cartel: var(--fuente-cartel), "Arial Narrow", sans-serif;
+  --font-texto: var(--fuente-texto), ui-sans-serif, system-ui, sans-serif;
+
+  --text-titular: clamp(3.1rem, 13vw, 6.5rem);
+  --text-titular--line-height: 0.86;
+  --text-rotulo: clamp(2.4rem, 8vw, 3.75rem);
+  --text-rotulo--line-height: 0.88;
+  --text-cifra: clamp(3rem, 12vw, 5rem);
+  --text-cifra--line-height: 0.82;
+
+  /* --- Ritmo ----------------------------------------------------------- */
+  --spacing-pliego: clamp(3rem, 9vw, 7.5rem);
+}
+
+/* --------------------------------------------------------------------------
+   Superficies del navegador. Las partes que no dibujamos también son el
+   cartel: selección, cursor, barra de scroll, foco, subrayados, cifras.
+   -------------------------------------------------------------------------- */
+
+::selection {
+  background-color: var(--color-naranja);
+  color: var(--color-tinta);
+}
+
+html {
+  scrollbar-color: var(--color-tinta) var(--color-papel-hueco);
+  scrollbar-width: thin;
+  -webkit-text-size-adjust: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-papel-hueco);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-tinta);
+  border: 3px solid var(--color-papel-hueco);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-naranja);
+}
+
+body {
+  background-color: var(--color-papel);
+  color: var(--color-tinta);
+  font-family: var(--font-texto);
+  caret-color: var(--color-naranja);
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 4px solid var(--color-azul);
+  outline-offset: 3px;
+}
+
+/* El azul no se ve sobre el azul: dentro de un campo azul el foco es naranja. */
+.campo-azul :focus-visible {
+  outline-color: var(--color-naranja);
+}
+
+a {
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 0.09em;
+}
+
+/* --------------------------------------------------------------------------
+   Tipografía del cartel.
+   -------------------------------------------------------------------------- */
+
+.cartel {
+  font-family: var(--font-cartel);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.rotulo {
+  font-family: var(--font-cartel);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.cifra {
+  font-family: var(--font-cartel);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums lining-nums;
+  letter-spacing: -0.03em;
+}
+
+.prosa {
+  max-width: 68ch;
+  text-wrap: pretty;
+}
+
+/* --------------------------------------------------------------------------
+   Trama de semitono. Es la pantalla de la serigrafía, no una textura de
+   adorno: solo aparece sobre campos de tinta, nunca sobre el papel limpio.
+   -------------------------------------------------------------------------- */
+
+.trama {
+  position: relative;
+  isolation: isolate;
+}
+.trama::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: radial-gradient(
+    var(--color-tinta) 0.9px,
+    transparent 0.9px
+  );
+  background-size: 7px 7px;
+  opacity: 0.14;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   REGISTRO: el único momento de movimiento del sitio.
+   Las capas de tinta entran fuera de registro y calzan con una salida
+   exponencial, igual que una prensa que ajusta la plancha. Al tocar un
+   elemento vivo, la capa se vuelve a salir un par de píxeles.
+   -------------------------------------------------------------------------- */
+
+@keyframes calzar-registro {
+  from {
+    transform: translate3d(var(--registro-x, -0.7rem), var(--registro-y, 0.5rem), 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.registro {
+  animation: calzar-registro 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--registro-retraso, 0ms);
+}
+
+.sobreimpreso {
+  mix-blend-mode: multiply;
+}
+
+/* El desfase al tocar. Se aplica al pseudo-elemento de tinta, no al texto,
+   para que nunca se mueva algo que se está leyendo. */
+.desfase {
+  transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.grupo-tinta:hover .desfase,
+.grupo-tinta:focus-visible .desfase {
+  transform: translate3d(0.28rem, -0.28rem, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .registro,
+  .desfase,
+  .grupo-tinta:hover .desfase {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Impresión: el cartel vuelve a ser un papel. Sirve como CV imprimible.
+   -------------------------------------------------------------------------- */
+
+@media print {
+  .no-imprimir {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+    color: #000;
+  }
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    word-break: break-all;
+  }
+}
