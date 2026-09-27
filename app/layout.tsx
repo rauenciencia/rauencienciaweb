@@ -7,7 +7,7 @@ import { Encabezado } from "@/components/layout/Encabezado";
 import { PieDePagina } from "@/components/layout/PieDePagina";
 import { personaJsonLd } from "@/lib/jsonld";
 import { metadatos } from "@/lib/seo";
-import { sitio, urlPlataforma } from "@/lib/sitio";
+import { sitio, urlPlataforma, urlSitio } from "@/lib/sitio";
 import "./globals.css";
 
 /** La voz del cartel: condensada, de alto contraste, pensada para gritar. */
@@ -28,9 +28,7 @@ const fuenteTexto = Archivo({
 
 export const metadata: Metadata = {
   ...metadatos(),
-  metadataBase: new URL(
-    (process.env.NEXT_PUBLIC_URL_SITIO ?? "https://rauenciencia.com").replace(/\/$/, ""),
-  ),
+  metadataBase: new URL(urlSitio),
   authors: [{ name: sitio.nombre }],
   creator: sitio.nombre,
 };

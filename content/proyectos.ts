@@ -1,3 +1,5 @@
+import { urlPlataforma } from "@/lib/sitio";
+
 import type { Proyecto } from "./tipos";
 
 /**
@@ -31,7 +33,7 @@ export const proyectos: Proyecto[] = [
       { numero: "+15.000", concepto: "jóvenes la han usado", fuente: "Infobae, agosto 2026" },
       { numero: "+400.000", concepto: "personas alcanzadas en tres meses", fuente: "La República, agosto 2026" },
     ],
-    enlace: { rotulo: "Entrar a la plataforma", url: process.env.NEXT_PUBLIC_URL_PLATAFORMA ?? "https://rauenciencia.com" },
+    enlace: { rotulo: "Entrar a la plataforma", url: urlPlataforma },
   },
   {
     slug: "simulador-prima",
