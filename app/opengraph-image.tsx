@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 import { perfil } from "@/content/perfil";
 
-export const alt = `${perfil.nombre} — ${perfil.alias}`;
+export const alt = `${perfil.nombre} · ${perfil.alias}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

@@ -41,6 +41,16 @@ No es "un divulgador de ciencia con web". Es alguien que consiguió 15 becas e i
 
 ## Brand Commitments
 
+> **Actualizado con el brief** (`docs/BRIEF-WEB-RAUENCIENCIA.md`), que Raúl confirmó como fuente de verdad. Donde este archivo contradiga al brief, manda el brief.
+
+- Identidad visual: **Cuaderno migajero**, sobre la paleta de Migajeando Oportunidades (verde bosque, crema, amarillo beca). Reemplaza tanto al "cartel de convocatoria" como a la paleta "pastel nocturno", ambos descartados por Raúl.
+- MIGO, el osito crema con lentes verdes, es el guía visual: máximo uno por pantalla, nunca en lugar de la foto de Raúl.
+- Voz: la de la skill `voz-rauenciencia`. Cero guiones largos, tildes y ñ perfectas.
+- El Tinder de Becas que se monta en `/becas` es el **v2** (`becas-para-migajear-v2`, 506 oportunidades), confirmado por Raúl.
+
+### Compromisos anteriores
+
+
 - Nombre público / handle: **@rauenciencia** ("Raw en Ciencia"). Nombre real: **Raúl Jáuregui Penny**.
 - Producto insignia: **Becas para Migajear**, apodado por la prensa "el Tinder de becas".
 - Frase suya ya publicada en prensa: *"La nueva generación ya no migajea amor, migajea becas"*.

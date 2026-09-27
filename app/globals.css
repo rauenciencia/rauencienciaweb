@@ -1,54 +1,83 @@
 @import "tailwindcss";
 
 /* ==========================================================================
-   MUNDO: cartel de convocatoria serigrafiado.
-   Tintas planas sobre papel bond barato. Sin degradados, sin sombras suaves,
-   sin vidrio. La profundidad la da la sobreimpresión de tintas (multiply) y
-   el desfase de registro, que es lo que pasa de verdad cuando una prensa
-   serigráfica no calza las capas.
+   CUADERNO MIGAJERO
+   El cuaderno de aventuras de un estudiante que va juntando migas hasta
+   llegar lejos: papel crema, stickers con contorno, garabatos a mano, fotos
+   tipo polaroid y MIGO de compañero. Sobre el verde bosque y el amarillo del
+   universo de Migajeando Oportunidades. Fuente de verdad: el brief, sección 9.
    ========================================================================== */
 
 @theme {
-  /* --- Tintas ---------------------------------------------------------- */
-  --color-papel: #f0e7d3;
-  --color-papel-hueco: #e4d9c1;
-  --color-tinta: #16130f;
-  --color-naranja: #ff4a1c;
-  --color-verde: #6fcf3f;
-  --color-azul: #1b39e8;
+  /* --- Paleta (brief 9.2). Contraste verificado a mano, ver README. ------ */
+  --color-bosque: #0f3d2e;
+  --color-bosque-900: #0a2a20;
+  --color-hoja: #2f7a4b;
+  --color-brote: #9ccb4f;
+  --color-beca: #f5c443;
+  --color-durazno: #facc9c;
+  --color-crema: #fcf5e5;
+  --color-papel: #fffdf7;
+  --color-tinta: #1f2a10;
+  --color-match: #e5484d; /* solo decorativo o texto de 24px o más */
+  --color-match-700: #c8323a;
+  --color-rau: #6e3a6b;
 
-  /* Sobre naranja y verde el texto va en tinta (5.5:1 y 9.4:1).
-     Sobre azul el texto va en papel (7.4:1). Nunca al revés. */
+  /* Alias temporales: las páginas viejas (cartel) siguen compilando y se ven
+     coherentes con la paleta nueva hasta que las rehagan las fases 2 a 4.
+     Se borran en la fase 5. */
+  --color-salvia: var(--color-brote);
+  --color-ciruela: var(--color-bosque);
+  --color-papel-hueco: var(--color-crema);
 
-  /* --- Tipografía ------------------------------------------------------ */
+  /* --- Tipografía (brief 9.3) ------------------------------------------ */
+  --font-titular: var(--fuente-titular), ui-sans-serif, system-ui, sans-serif;
   --font-cartel: var(--fuente-cartel), "Arial Narrow", sans-serif;
   --font-texto: var(--fuente-texto), ui-sans-serif, system-ui, sans-serif;
+  --font-mano: var(--fuente-mano), cursive;
 
-  --text-titular: clamp(3.1rem, 13vw, 6.5rem);
-  --text-titular--line-height: 0.86;
-  --text-rotulo: clamp(2.4rem, 8vw, 3.75rem);
-  --text-rotulo--line-height: 0.88;
+  /* Escala fluida: H1 56 a 120 px, H2 36 a 64 px, H3 24 a 32 px. */
+  --text-h1: clamp(3.5rem, 9vw, 7.5rem);
+  --text-h1--line-height: 0.95;
+  --text-h2: clamp(2.25rem, 5.5vw, 4rem);
+  --text-h2--line-height: 1;
+  --text-h3: clamp(1.5rem, 2.6vw, 2rem);
+  --text-h3--line-height: 1.1;
+  --text-cuerpo: clamp(1.0625rem, 0.3vw + 1rem, 1.125rem);
+  --text-cuerpo--line-height: 1.6;
+
+  /* Aliases de la escala vieja, para las páginas que aún no se rehacen. */
+  --text-titular: var(--text-h1);
+  --text-titular--line-height: 0.95;
+  --text-rotulo: var(--text-h2);
+  --text-rotulo--line-height: 1;
   --text-cifra: clamp(3rem, 12vw, 5rem);
-  --text-cifra--line-height: 0.82;
+  --text-cifra--line-height: 0.85;
 
-  /* --- Ritmo ----------------------------------------------------------- */
-  --spacing-pliego: clamp(3rem, 9vw, 7.5rem);
+  /* --- Formas (brief 9.4) ---------------------------------------------- */
+  --radius-tarjeta: 20px;
+  --radius-pildora: 999px;
+
+  /* --- Movimiento (brief 10) ------------------------------------------- */
+  --ease-suave: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --spacing-pliego: clamp(4rem, 9vw, 7.5rem);
 }
 
 /* --------------------------------------------------------------------------
-   Superficies del navegador. Las partes que no dibujamos también son el
-   cartel: selección, cursor, barra de scroll, foco, subrayados, cifras.
+   Superficies del navegador: también son parte del cuaderno.
    -------------------------------------------------------------------------- */
 
 ::selection {
-  background-color: var(--color-naranja);
+  background-color: var(--color-beca);
   color: var(--color-tinta);
 }
 
 html {
-  scrollbar-color: var(--color-tinta) var(--color-papel-hueco);
+  scrollbar-color: var(--color-bosque) var(--color-crema);
   scrollbar-width: thin;
   -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 7rem;
 }
 
 ::-webkit-scrollbar {
@@ -56,65 +85,85 @@ html {
   height: 12px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-papel-hueco);
+  background: var(--color-crema);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-tinta);
-  border: 3px solid var(--color-papel-hueco);
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-naranja);
+  background: var(--color-bosque);
+  border: 3px solid var(--color-crema);
+  border-radius: 999px;
 }
 
 body {
-  background-color: var(--color-papel);
+  background-color: var(--color-crema);
   color: var(--color-tinta);
   font-family: var(--font-texto);
-  caret-color: var(--color-naranja);
-  font-synthesis-weight: none;
+  font-size: var(--text-cuerpo);
+  line-height: 1.6;
+  caret-color: var(--color-hoja);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
+/* El brief pide anillo amarillo, pero amarillo sobre crema da 1,5:1 y no se
+   ve. Sobre fondo claro el anillo es verde bosque (11:1); sobre fondo oscuro,
+   amarillo beca (7,5:1). Así sigue siendo el anillo de la marca. */
 :focus-visible {
-  outline: 4px solid var(--color-azul);
+  outline: 3px solid var(--color-bosque);
   outline-offset: 3px;
+  border-radius: 6px;
 }
-
-/* El azul no se ve sobre el azul: dentro de un campo azul el foco es naranja. */
-.campo-azul :focus-visible {
-  outline-color: var(--color-naranja);
+.superficie-oscura :focus-visible,
+.campo-oscuro :focus-visible {
+  outline-color: var(--color-beca);
 }
 
 a {
-  text-underline-offset: 0.18em;
-  text-decoration-thickness: 0.09em;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 0.08em;
 }
 
-/* --------------------------------------------------------------------------
-   Tipografía del cartel.
-   -------------------------------------------------------------------------- */
-
-.cartel {
-  font-family: var(--font-cartel);
+h1,
+h2,
+h3 {
+  font-family: var(--font-titular);
   font-weight: 800;
   letter-spacing: -0.02em;
-  text-transform: uppercase;
   text-wrap: balance;
 }
 
-.rotulo {
+/* --------------------------------------------------------------------------
+   Piezas de lenguaje.
+   -------------------------------------------------------------------------- */
+
+/* Big Shoulders siempre en mayúsculas, con el eje óptico al máximo: es la voz
+   de "ESCUELITA MIGAJERA", de las fechas y de los stickers. */
+.cartel {
   font-family: var(--font-cartel);
-  font-weight: 600;
+  font-variation-settings: "opsz" 72;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.01em;
+  line-height: 0.95;
+}
+
+.versalitas {
+  font-family: var(--font-cartel);
+  font-variation-settings: "opsz" 72;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.mano {
+  font-family: var(--font-mano);
+  font-weight: 600;
 }
 
 .cifra {
   font-family: var(--font-cartel);
+  font-variation-settings: "opsz" 72;
   font-weight: 800;
   font-variant-numeric: tabular-nums lining-nums;
-  letter-spacing: -0.03em;
 }
 
 .prosa {
@@ -122,36 +171,131 @@ a {
   text-wrap: pretty;
 }
 
-/* --------------------------------------------------------------------------
-   Trama de semitono. Es la pantalla de la serigrafía, no una textura de
-   adorno: solo aparece sobre campos de tinta, nunca sobre el papel limpio.
-   -------------------------------------------------------------------------- */
+/* Estilo sticker (brief 9.4): contorno de 2 px y sombra sólida desplazada.
+   Es el mundo que eligió el brief, no un adorno suelto. */
+.sticker {
+  border: 2px solid var(--color-tinta);
+  border-radius: var(--radius-tarjeta);
+  box-shadow: 4px 4px 0 var(--color-tinta);
+  transition:
+    transform 220ms var(--ease-suave),
+    box-shadow 220ms var(--ease-suave);
+}
+.sticker-vivo:hover,
+.sticker-vivo:focus-within {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0 var(--color-tinta);
+}
 
-.trama {
+/* Trama de migas: los tres puntitos del logo de Migajeando, repetidos.
+   4 % sobre crema, 6 % sobre bosque. */
+.trama-migas,
+.trama-migas-oscura {
   position: relative;
   isolation: isolate;
 }
-.trama::after {
+.trama-migas::before,
+.trama-migas-oscura::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
-  background-image: radial-gradient(
-    var(--color-tinta) 0.9px,
-    transparent 0.9px
-  );
-  background-size: 7px 7px;
-  opacity: 0.14;
   pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='%231F2A10'%3E%3Ccircle cx='10' cy='12' r='2.2'/%3E%3Ccircle cx='16.5' cy='9' r='1.6'/%3E%3Ccircle cx='15' cy='16' r='1.2'/%3E%3Ccircle cx='38' cy='40' r='2.2'/%3E%3Ccircle cx='44.5' cy='37' r='1.6'/%3E%3Ccircle cx='43' cy='44' r='1.2'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 56px 56px;
+  opacity: 0.04;
+}
+.trama-migas-oscura::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='%23FCF5E5'%3E%3Ccircle cx='10' cy='12' r='2.2'/%3E%3Ccircle cx='16.5' cy='9' r='1.6'/%3E%3Ccircle cx='15' cy='16' r='1.2'/%3E%3Ccircle cx='38' cy='40' r='2.2'/%3E%3Ccircle cx='44.5' cy='37' r='1.6'/%3E%3Ccircle cx='43' cy='44' r='1.2'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.06;
+}
+
+html[data-anuncio-cerrado] .barra-anuncio {
+  display: none;
 }
 
 /* --------------------------------------------------------------------------
-   REGISTRO: el único momento de movimiento del sitio.
-   Las capas de tinta entran fuera de registro y calzan con una salida
-   exponencial, igual que una prensa que ajusta la plancha. Al tocar un
-   elemento vivo, la capa se vuelve a salir un par de píxeles.
+   Loops en CSS (brief 10): marquee y pulso del botón de WhatsApp.
    -------------------------------------------------------------------------- */
 
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+.marquee-pista {
+  animation: marquee var(--marquee-duracion, 30s) linear infinite;
+}
+.marquee:hover .marquee-pista,
+.marquee:focus-within .marquee-pista {
+  animation-play-state: paused;
+}
+
+@keyframes pulso-suave {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgb(245 196 67 / 0.55);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 0 10px rgb(245 196 67 / 0);
+  }
+}
+.pulso-suave {
+  animation: pulso-suave 2s var(--ease-suave) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+  .marquee-pista {
+    animation: none !important;
+  }
+}
+
+@media print {
+  .no-imprimir {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
+}
+
+/* ==========================================================================
+   LEGADO DEL CARTEL. Lo usan las páginas que todavía no se rehacen
+   (/sobre-mi, /proyectos, /prensa, /contacto, /charlas). Se borra en la
+   fase 5, cuando ya no quede ninguna.
+   ========================================================================== */
+
+.rotulo {
+  font-family: var(--font-cartel);
+  font-variation-settings: "opsz" 72;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.trama {
+  position: relative;
+  isolation: isolate;
+}
+.grupo-tinta .desfase {
+  transition: transform 260ms var(--ease-suave);
+}
+.grupo-tinta:hover .desfase,
+.grupo-tinta:focus-visible .desfase {
+  transform: translate3d(0.25rem, -0.25rem, 0);
+}
 @keyframes calzar-registro {
   from {
     transform: translate3d(var(--registro-x, -0.7rem), var(--registro-y, 0.5rem), 0);
@@ -160,126 +304,45 @@ a {
     transform: translate3d(0, 0, 0);
   }
 }
-
 .registro {
-  animation: calzar-registro 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: calzar-registro 900ms var(--ease-suave) both;
   animation-delay: var(--registro-retraso, 0ms);
 }
-
-.sobreimpreso {
-  mix-blend-mode: multiply;
+.migo {
+  transform-origin: 50% 90%;
 }
-
-/* El desfase al tocar. Se aplica al pseudo-elemento de tinta, no al texto,
-   para que nunca se mueva algo que se está leyendo. */
-.desfase {
-  transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-.grupo-tinta:hover .desfase,
-.grupo-tinta:focus-visible .desfase {
-  transform: translate3d(0.28rem, -0.28rem, 0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .registro,
-  .desfase,
-  .grupo-tinta:hover .desfase {
-    animation: none !important;
-    transition: none !important;
-    transform: none !important;
-  }
-  html {
-    scroll-behavior: auto;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   Impresión: el cartel vuelve a ser un papel. Sirve como CV imprimible.
-   -------------------------------------------------------------------------- */
-
-@media print {
-  .no-imprimir {
-    display: none !important;
-  }
-  body {
-    background: #fff;
-    color: #000;
-  }
-  a::after {
-    content: " (" attr(href) ")";
-    font-size: 0.75em;
-    word-break: break-all;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   MIGO. La mascota entra como una capa de tinta más: llega fuera de registro,
-   calza, y después respira. Nada de rebotes de juguete — el movimiento es el
-   del oficio, no el de un GIF.
-   -------------------------------------------------------------------------- */
-
 @keyframes migo-entra {
   from {
     opacity: 0;
-    transform: translate3d(-1.1rem, 1.4rem, 0) rotate(-4deg);
+    transform: translate3d(-1rem, 1.2rem, 0) rotate(-4deg);
   }
   to {
     opacity: 1;
-    transform: translate3d(0, 0, 0) rotate(0deg);
+    transform: none;
   }
 }
-
 @keyframes migo-respira {
   0%,
   100% {
-    transform: translate3d(0, 0, 0) rotate(0deg);
+    transform: none;
   }
   50% {
     transform: translate3d(0, -0.5rem, 0) rotate(1.2deg);
   }
 }
-
-.migo {
-  transform-origin: 50% 90%;
-  will-change: transform;
-}
-
-/* Dos capas de animación anidadas: la de fuera respira siempre, la de dentro
-   entra una sola vez. Así una no pisa a la otra. */
 .migo-respira {
   animation: migo-respira 5200ms cubic-bezier(0.37, 0, 0.63, 1) infinite;
 }
-
 .migo-entra {
-  animation: migo-entra 1100ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: migo-entra 1100ms var(--ease-suave) both;
   animation-delay: var(--migo-retraso, 0ms);
 }
-
-/* Al tocarlo, se sale de registro como una plancha mal calzada y vuelve. */
 .migo-vivo {
-  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 300ms var(--ease-suave);
 }
-.migo-vivo:hover,
-.migo-vivo:focus-visible {
+.migo-vivo:hover {
   transform: translate3d(0.4rem, -0.6rem, 0) rotate(-3deg) scale(1.04);
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .migo-respira,
-  .migo-entra {
-    animation: none !important;
-  }
-  .migo-vivo:hover,
-  .migo-vivo:focus-visible {
-    transform: none !important;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   EL AVISO. El cartel pegado encima del cartel: entra como un papel que
-   alguien acaba de pegar en la pared, no como un modal que se desvanece.
-   -------------------------------------------------------------------------- */
-
 @keyframes aviso-pega {
   from {
     opacity: 0;
@@ -287,10 +350,9 @@ a {
   }
   to {
     opacity: 1;
-    transform: translate3d(0, 0, 0) rotate(0deg);
+    transform: none;
   }
 }
-
 @keyframes fondo-entra {
   from {
     opacity: 0;
@@ -299,23 +361,12 @@ a {
     opacity: 1;
   }
 }
-
 .aviso-fondo {
   animation: fondo-entra 320ms ease-out both;
 }
-
 .aviso-papel {
-  animation: aviso-pega 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: aviso-pega 520ms var(--ease-suave) both;
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .aviso-fondo,
-  .aviso-papel {
-    animation-duration: 1ms !important;
-  }
-}
-
-/* Mientras el aviso está abierto, el pliego de atrás no se desplaza. */
 body[data-aviso="abierto"] {
   overflow: hidden;
 }

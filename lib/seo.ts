@@ -13,7 +13,7 @@ type Opciones = {
  * vez: pegado en un chat.
  */
 export function metadatos({ titulo, descripcion, ruta = "/" }: Opciones = {}): Metadata {
-  const tituloFinal = titulo ? `${titulo} — ${sitio.nombre}` : sitio.titulo;
+  const tituloFinal = titulo ? `${titulo} | ${sitio.nombre}` : sitio.titulo;
   const descripcionFinal = descripcion ?? sitio.descripcion;
   const url = `${urlSitio}${ruta === "/" ? "" : ruta}`;
 

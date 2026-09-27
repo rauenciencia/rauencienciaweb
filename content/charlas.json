@@ -1,0 +1,34 @@
+{
+  "tedx": [
+    {
+      "titulo": "Biotecnología de la basura: el futuro se cultiva con residuos",
+      "evento": "TEDxCamacho Youth",
+      "fecha": "2025-08-02",
+      "ciudad": "Lima",
+      "youtubeId": null,
+      "thumbnail": "/fotos/tedx-camacho-titulo.jpg",
+      "descripcion": "[PLACEHOLDER descripción corta]"
+    },
+    {
+      "titulo": "[PLACEHOLDER título]",
+      "evento": "TEDxUNALM",
+      "fecha": null,
+      "ciudad": "Lima",
+      "youtubeId": null,
+      "thumbnail": null,
+      "descripcion": "[PLACEHOLDER descripción corta]"
+    }
+  ],
+  "temas": [
+    { "titulo": "Cómo ganar becas sin contactos", "descripcion": "[PLACEHOLDER descripción]", "confirmar": true },
+    { "titulo": "Migajear oportunidades: el proceso no es lineal", "descripcion": "[PLACEHOLDER descripción]", "confirmar": true },
+    { "titulo": "IA para encontrar oportunidades", "descripcion": "[PLACEHOLDER descripción]", "confirmar": true },
+    { "titulo": "Sostenibilidad y jóvenes", "descripcion": "[PLACEHOLDER descripción]", "confirmar": true },
+    { "titulo": "Inclusión digital", "descripcion": "[PLACEHOLDER descripción]", "confirmar": true }
+  ],
+  "formatos": [
+    { "nombre": "Charla inspiracional", "duracion": "45 a 60 min", "descripcion": "Para auditorios que necesitan ganas de postular.", "destacado": false },
+    { "nombre": "Taller práctico", "duracion": "2 a 4 h", "descripcion": "Salen con su ruta de postulación armada.", "destacado": true },
+    { "nombre": "Programa para instituciones", "duracion": "Por ciclo", "descripcion": "La Escuelita Migajera en tu región.", "destacado": false }
+  ]
+}
