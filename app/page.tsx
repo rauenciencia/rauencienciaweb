@@ -31,7 +31,7 @@ export default function Portada() {
 
             <FranjaDeAccion
               href={urlPlataforma}
-              tinta="naranja"
+              tinta="durazno"
               externo
               nota="Más de 500 oportunidades reales. Gratis, en el navegador, sin descargar nada."
             >
@@ -43,9 +43,9 @@ export default function Portada() {
         </div>
       </CampoDeTinta>
 
-      {/* LA PLATAFORMA, sobreimpresa en naranja. Es la promesa del cartel, y
+      {/* LA PLATAFORMA, sobreimpresa en durazno. Es la promesa del cartel, y
           se explica en tres pasos porque el orden es el dato. */}
-      <CampoDeTinta tinta="naranja" trama id="plataforma">
+      <CampoDeTinta tinta="durazno" trama id="plataforma">
         <div className="flex flex-col gap-10">
           <h2 className="cartel text-rotulo max-w-[16ch]">{proyectoInsignia.nombre}</h2>
           <Rotulo>{proyectoInsignia.apodo ? `Le dicen ${proyectoInsignia.apodo}` : "El proyecto"}</Rotulo>
@@ -87,7 +87,7 @@ export default function Portada() {
             <p className="prosa text-lg leading-relaxed sm:text-xl">{perfil.bioLarga[1]}</p>
             <Link
               href="/sobre-mi"
-              className="rotulo text-sm underline decoration-naranja decoration-[3px] underline-offset-[6px] hover:no-underline"
+              className="rotulo text-sm underline decoration-durazno decoration-[3px] underline-offset-[6px] hover:no-underline"
             >
               Leer la historia completa
             </Link>
@@ -96,7 +96,7 @@ export default function Portada() {
       </CampoDeTinta>
 
       {/* LA PRUEBA. Lo que escribieron otros, con sus titulares completos. */}
-      <CampoDeTinta tinta="azul">
+      <CampoDeTinta tinta="ciruela">
         <div className="flex flex-col gap-10">
           <h2 className="cartel text-rotulo max-w-[18ch]">
             La prensa le puso nombre antes que yo
@@ -105,7 +105,7 @@ export default function Portada() {
           <ListaPrensa coberturas={prensa.slice(0, 4)} />
           <Link
             href="/prensa"
-            className="rotulo text-sm underline decoration-naranja decoration-[3px] underline-offset-[6px] hover:no-underline"
+            className="rotulo text-sm underline decoration-durazno decoration-[3px] underline-offset-[6px] hover:no-underline"
           >
             Ver toda la cobertura
           </Link>
@@ -114,7 +114,7 @@ export default function Portada() {
 
       {/* LA OFERTA. Un conferencista se contrata por charlas con nombre propio,
           no por "temas de interés". Cada una dice de qué trata en una línea. */}
-      <CampoDeTinta tinta="verde" trama>
+      <CampoDeTinta tinta="salvia" trama>
         <div className="flex flex-col gap-10">
           <h2 className="cartel text-rotulo max-w-[17ch]">Tres charlas listas para dar</h2>
           <Rotulo>Invítame a hablar</Rotulo>
@@ -139,8 +139,9 @@ export default function Portada() {
         </div>
       </CampoDeTinta>
 
-      {/* EL CIERRE. El pliego termina anclado en una acción, no en un adorno. */}
-      <CampoDeTinta tinta="naranja">
+      {/* EL CIERRE. El pliego termina anclado en una acción, no en un adorno.
+          Va en papel: el durazno queda reservado para la plataforma. */}
+      <CampoDeTinta>
         <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-end">
           <div className="flex flex-col gap-6">
             <h2 className="cartel text-rotulo max-w-[15ch]">Charlas, prensa y alianzas</h2>

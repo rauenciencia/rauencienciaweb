@@ -14,7 +14,7 @@ export function Retrato({ className = "" }: { className?: string }) {
   if (perfil.retrato.porConfirmar) {
     return (
       <div
-        className={`campo-azul trama flex aspect-[4/5] w-full flex-col justify-between border-[3px] border-tinta bg-papel-hueco p-6 ${className}`}
+        className={`campo-oscuro trama flex aspect-[4/5] w-full flex-col justify-between border-[3px] border-tinta bg-papel-hueco p-6 ${className}`}
       >
         <p className="rotulo text-xs">Falta el retrato</p>
         <p className="cartel text-[clamp(1.5rem,4vw,2.25rem)] leading-none">

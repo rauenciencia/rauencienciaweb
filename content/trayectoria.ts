@@ -20,14 +20,14 @@ export const trayectoria: Hito[] = [
     titulo: "La puerta de entrada",
     detalle:
       "Entré a la universidad con Beca 18, la beca estatal de Pronabec. La primera convocatoria que gané fue la que hizo posible todas las demás.",
-    tinta: "verde",
+    tinta: "salvia",
   },
   {
     anio: "UPCH",
     titulo: "Ingeniería Ambiental",
     detalle:
       "Estudio Ingeniería Ambiental en la Universidad Peruana Cayetano Heredia.",
-    tinta: "azul",
+    tinta: "ciruela",
   },
   {
     anio: "15",
@@ -41,6 +41,6 @@ export const trayectoria: Hito[] = [
     titulo: "Becas para Migajear",
     detalle:
       "Convertí ese Excel en una plataforma gratuita. En tres meses llegó a más de 400.000 personas y la usaron más de 15.000 jóvenes en Perú, México, Chile y otros países de la región.",
-    tinta: "naranja",
+    tinta: "durazno",
   },
 ];

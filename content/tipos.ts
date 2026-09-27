@@ -41,7 +41,7 @@ export type Hito = {
   tinta?: Tinta;
 };
 
-export type Tinta = "naranja" | "verde" | "azul" | "tinta";
+export type Tinta = "durazno" | "salvia" | "ciruela" | "tinta";
 
 export type Proyecto = {
   slug: string;

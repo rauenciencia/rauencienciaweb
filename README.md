@@ -118,16 +118,22 @@ tarjetas. La unidad de composición es el *campo de tinta*: una banda de color a
 todo el ancho. No hay grillas de tarjetas iguales, ni degradados, ni vidrio, ni
 sombras suaves.
 
-**Tintas.** Cada una viene con el color de texto que sí contrasta sobre ella, y
-no se combinan a mano — se elige la tinta y el par viene completo:
+**Tintas: pastel nocturno.** Tu marca personal es pariente de Migajeando
+Oportunidades (Bosque & Crema) pero no su gemela. La plataforma es verde bosque,
+menta y ámbar sobre crema; tu web es azul noche, durazno tostado, salvia y
+ciruela ahumada sobre piedra. Son pasteles bajados de tono: se leen
+profesionales, no infantiles. La salvia es el guiño a la menta de la plataforma.
 
-| Tinta | Color | Texto encima | Contraste |
-|---|---|---|---|
-| naranja | `#FF4A1C` | tinta | 5.5:1 |
-| verde | `#6FCF3F` | tinta | 9.4:1 |
-| azul | `#1B39E8` | papel | 7.4:1 |
-| tinta | `#16130F` | papel | 15.6:1 |
-| papel | `#F0E7D3` | tinta | 15.6:1 |
+Cada tinta viene con el color de texto que sí contrasta sobre ella, y no se
+combinan a mano: se elige la tinta y el par viene completo.
+
+| Tinta | Color | Texto encima | Contraste | Para qué |
+|---|---|---|---|---|
+| durazno | `#D9967A` | tinta | 6.6:1 | la acción: todo lo que lleva a la plataforma |
+| salvia | `#9DB4A0` | tinta | 7.2:1 | la oferta: charlas |
+| ciruela | `#4A4360` | papel | 7.5:1 | la prueba: prensa |
+| tinta (azul noche) | `#1C2130` | papel | 13.0:1 | texto, encabezado, pie |
+| papel (piedra) | `#ECE7DF` | tinta | 13.0:1 | el fondo de lectura |
 
 **Tipografía.** *Big Shoulders* condensada para todo lo que grita (titulares,
 cifras, rótulos) y *Archivo* para lo que se lee de corrido.

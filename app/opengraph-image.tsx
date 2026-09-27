@@ -8,7 +8,7 @@ export const contentType = "image/png";
 
 /**
  * La tarjeta que se ve cuando alguien pega el enlace en WhatsApp o en X.
- * Es el mismo cartel, recortado al formato: tinta naranja plana, titular
+ * Es el mismo cartel, recortado al formato: tinta de durazno plana, titular
  * condensado a sangre, y las cifras al pie.
  */
 async function cargarFuente(): Promise<ArrayBuffer | null> {
@@ -40,8 +40,8 @@ export default async function Imagen() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          backgroundColor: "#FF4A1C",
-          color: "#16130F",
+          backgroundColor: "#D9967A",
+          color: "#1C2130",
           padding: "64px 72px",
           fontFamily: fuente ? "Cartel" : "sans-serif",
         }}
@@ -72,7 +72,7 @@ export default async function Imagen() {
           style={{
             display: "flex",
             gap: 56,
-            borderTop: "6px solid #16130F",
+            borderTop: "6px solid #1C2130",
             paddingTop: 24,
             fontSize: 30,
             fontWeight: 800,

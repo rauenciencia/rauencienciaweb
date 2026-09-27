@@ -25,7 +25,7 @@ export function CampoDeTinta({ tinta, trama = false, id, className = "", childre
       className={[
         "relative w-full px-5 py-pliego sm:px-8",
         paleta ? `${paleta.fondo} ${paleta.texto}` : "bg-papel text-tinta",
-        tinta === "azul" || tinta === "tinta" ? "campo-azul" : "",
+        tinta === "ciruela" || tinta === "tinta" ? "campo-oscuro" : "",
         trama ? "trama" : "",
         className,
       ]

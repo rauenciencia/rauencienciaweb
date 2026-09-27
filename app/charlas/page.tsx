@@ -30,7 +30,7 @@ export default function Charlas() {
             </p>
             <FranjaDeAccion
               href={`mailto:${perfil.correo}?subject=${encodeURIComponent("Invitación a dar una charla")}`}
-              tinta="naranja"
+              tinta="durazno"
               externo
               nota="Cuéntame el evento, la fecha y el público. Respondo con disponibilidad."
             >
@@ -91,7 +91,7 @@ export default function Charlas() {
       </CampoDeTinta>
 
       {/* Prueba real: lo que ya escribieron sobre él. */}
-      <CampoDeTinta tinta="azul">
+      <CampoDeTinta tinta="ciruela">
         <div className="flex flex-col gap-10">
           <h2 className="cartel text-rotulo max-w-[18ch]">No tienes que creerme a mí</h2>
           <Rotulo>Lo que ya se ha publicado</Rotulo>
@@ -132,7 +132,7 @@ export default function Charlas() {
       </CampoDeTinta>
 
       {testimonios.length > 0 ? (
-        <CampoDeTinta tinta="verde" trama>
+        <CampoDeTinta tinta="salvia" trama>
           <div className="flex flex-col gap-10">
             <Rotulo>Lo que dijeron después</Rotulo>
             <ul className="grid gap-10 lg:grid-cols-2">
@@ -163,7 +163,7 @@ export default function Charlas() {
           </div>
           <FranjaDeAccion
             href={`mailto:${perfil.correo}?subject=${encodeURIComponent("Invitación a dar una charla")}`}
-            tinta="naranja"
+            tinta="durazno"
             externo
             nota={perfil.correo}
           >

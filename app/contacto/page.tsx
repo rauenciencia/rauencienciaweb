@@ -40,7 +40,7 @@ export default function Contacto() {
             </div>
 
             <div className="flex flex-col gap-6">
-              <FranjaDeAccion href={`mailto:${perfil.correo}`} tinta="naranja" externo nota={perfil.correo}>
+              <FranjaDeAccion href={`mailto:${perfil.correo}`} tinta="durazno" externo nota={perfil.correo}>
                 Mandar correo
               </FranjaDeAccion>
 
@@ -53,7 +53,7 @@ export default function Contacto() {
                         href={red.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="cartel text-[clamp(1.3rem,4vw,1.8rem)] leading-none hover:text-naranja"
+                        className="cartel text-[clamp(1.3rem,4vw,1.8rem)] leading-none hover:text-durazno"
                       >
                         {red.rotulo}
                       </a>
@@ -87,7 +87,7 @@ export default function Contacto() {
           </ul>
           <Link
             href="/charlas"
-            className="rotulo text-sm underline decoration-naranja decoration-[3px] underline-offset-[6px] hover:no-underline"
+            className="rotulo text-sm underline decoration-durazno decoration-[3px] underline-offset-[6px] hover:no-underline"
           >
             Ver de qué trata cada una
           </Link>

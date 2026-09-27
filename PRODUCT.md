@@ -46,6 +46,8 @@ No es "un divulgador de ciencia con web". Es alguien que consiguió 15 becas e i
 - Frase suya ya publicada en prensa: *"La nueva generación ya no migajea amor, migajea becas"*.
 - El usuario tiene fotos/retratos propios utilizables. Los archivos aún no están en el repo: se dejan slots marcados.
 - No usar la identidad visual de Prima AFP: es la marca de un cliente/empleador, no la suya.
+- Pedido explícito del usuario: la marca personal @rauenciencia toma como referencia la paleta de Migajeando Oportunidades (Bosque & Crema) pero **debe ser distinta**: tonos pastel oscuros y profesionales. Pariente, no gemela.
+- Por ahora el foco es solo el sitio personal. Integrar Becas para Migajear dentro del dominio (`/becas`) queda para más adelante.
 
 ## Evidence on Hand
 

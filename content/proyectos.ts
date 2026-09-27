@@ -25,7 +25,7 @@ export const proyectos: Proyecto[] = [
     ],
     estado: "activo",
     anio: "2026",
-    tinta: "naranja",
+    tinta: "durazno",
     cifras: [
       { numero: "+500", concepto: "oportunidades reales publicadas", fuente: "rauenciencia.com" },
       { numero: "+15.000", concepto: "jóvenes la han usado", fuente: "Infobae, agosto 2026" },
@@ -49,7 +49,7 @@ export const proyectos: Proyecto[] = [
     ],
     estado: "activo",
     anio: "2026",
-    tinta: "azul",
+    tinta: "ciruela",
     cifras: [],
     repositorio: "https://github.com/rauenciencia/simulador",
   },

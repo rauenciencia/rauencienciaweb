@@ -1,24 +1,31 @@
 @import "tailwindcss";
 
 /* ==========================================================================
-   MUNDO: cartel de convocatoria serigrafiado.
-   Tintas planas sobre papel bond barato. Sin degradados, sin sombras suaves,
-   sin vidrio. La profundidad la da la sobreimpresión de tintas (multiply) y
-   el desfase de registro, que es lo que pasa de verdad cuando una prensa
-   serigráfica no calza las capas.
+   MUNDO: cartel de convocatoria serigrafiado, impreso en tintas de pastel
+   nocturno.
+
+   La marca personal @rauenciencia es pariente de Migajeando Oportunidades
+   (Bosque & Crema) pero no su gemela: donde la plataforma es verde bosque,
+   menta y ámbar sobre crema, esta es azul noche, durazno tostado, salvia y
+   ciruela ahumada sobre piedra. Pasteles bajados de tono y de brillo: se leen
+   profesionales, no infantiles. La salvia es el guiño a la menta de la
+   plataforma; lo demás es propio.
+
+   Tintas planas, sin degradados, sin sombras suaves, sin vidrio. La
+   profundidad la da la sobreimpresión (multiply) y el desfase de registro.
    ========================================================================== */
 
 @theme {
   /* --- Tintas ---------------------------------------------------------- */
-  --color-papel: #f0e7d3;
-  --color-papel-hueco: #e4d9c1;
-  --color-tinta: #16130f;
-  --color-naranja: #ff4a1c;
-  --color-verde: #6fcf3f;
-  --color-azul: #1b39e8;
+  --color-papel: #ece7df;       /* piedra: más gris y más fría que la crema de la plataforma */
+  --color-papel-hueco: #ddd6cb;
+  --color-tinta: #1c2130;       /* azul noche: el negro de la marca, nunca #000 */
+  --color-durazno: #d9967a;     /* durazno tostado: la tinta de la acción */
+  --color-salvia: #9db4a0;      /* salvia: el guiño a la menta de Migajeando */
+  --color-ciruela: #4a4360;     /* ciruela ahumada: el campo profundo */
 
-  /* Sobre naranja y verde el texto va en tinta (5.5:1 y 9.4:1).
-     Sobre azul el texto va en papel (7.4:1). Nunca al revés. */
+  /* Sobre durazno y salvia el texto va en tinta (6.6:1 y 7.2:1).
+     Sobre ciruela y tinta el texto va en papel (7.5:1 y 13:1). Nunca al revés. */
 
   /* --- Tipografía ------------------------------------------------------ */
   --font-cartel: var(--fuente-cartel), "Arial Narrow", sans-serif;
@@ -41,7 +48,7 @@
    -------------------------------------------------------------------------- */
 
 ::selection {
-  background-color: var(--color-naranja);
+  background-color: var(--color-durazno);
   color: var(--color-tinta);
 }
 
@@ -63,27 +70,27 @@ html {
   border: 3px solid var(--color-papel-hueco);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-naranja);
+  background: var(--color-durazno);
 }
 
 body {
   background-color: var(--color-papel);
   color: var(--color-tinta);
   font-family: var(--font-texto);
-  caret-color: var(--color-naranja);
+  caret-color: var(--color-durazno);
   font-synthesis-weight: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
 :focus-visible {
-  outline: 4px solid var(--color-azul);
+  outline: 4px solid var(--color-ciruela);
   outline-offset: 3px;
 }
 
-/* El azul no se ve sobre el azul: dentro de un campo azul el foco es naranja. */
-.campo-azul :focus-visible {
-  outline-color: var(--color-naranja);
+/* El anillo de foco es ciruela; sobre los campos oscuros no se vería, así que ahí pasa a durazno. */
+.campo-oscuro :focus-visible {
+  outline-color: var(--color-durazno);
 }
 
 a {

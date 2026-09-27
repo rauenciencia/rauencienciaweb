@@ -10,7 +10,7 @@ import { navegacion } from "@/lib/sitio";
  */
 export function Encabezado() {
   return (
-    <header className="campo-azul no-imprimir bg-tinta text-papel">
+    <header className="campo-oscuro no-imprimir bg-tinta text-papel">
       <div className="mx-auto flex w-full max-w-[78rem] flex-col gap-3 px-5 py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8 sm:px-8">
         <Link href="/" className="flex flex-col gap-1 no-underline sm:gap-0.5">
           <span className="cartel text-2xl leading-none sm:text-3xl">{perfil.nombre}</span>
@@ -25,7 +25,7 @@ export function Encabezado() {
               <li key={seccion.href}>
                 <Link
                   href={seccion.href}
-                  className="text-papel/75 decoration-naranja decoration-[3px] underline-offset-[6px] transition-colors hover:text-papel hover:underline"
+                  className="text-papel/75 decoration-durazno decoration-[3px] underline-offset-[6px] transition-colors hover:text-papel hover:underline"
                 >
                   {seccion.rotulo}
                 </Link>

@@ -25,7 +25,7 @@ export const temas: Tema[] = [
       "Qué hacer con los rechazos, que son la mayoría",
     ],
     para: "Colegios, universidades y programas de becas",
-    tinta: "naranja",
+    tinta: "durazno",
   },
   {
     slug: "construir",
@@ -40,7 +40,7 @@ export const temas: Tema[] = [
       "Qué cambia cuando lo regalas en vez de venderlo",
     ],
     para: "Programas de emprendimiento, incubadoras y eventos de tecnología",
-    tinta: "azul",
+    tinta: "ciruela",
   },
   {
     slug: "divulgacion",
@@ -55,7 +55,7 @@ export const temas: Tema[] = [
       "Cómo simplificar sin perder lo que es verdad",
     ],
     para: "Facultades, museos, medios y equipos de comunicación",
-    tinta: "verde",
+    tinta: "salvia",
   },
 ];
 

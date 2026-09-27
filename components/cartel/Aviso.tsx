@@ -106,7 +106,7 @@ export function Aviso({ urlPlataforma }: { urlPlataforma: string }) {
 
       <div
         ref={panel}
-        className="aviso-papel campo-azul trama relative mt-20 w-full max-w-[36rem] border-[4px] border-tinta bg-naranja text-tinta sm:mt-24"
+        className="aviso-papel campo-oscuro trama relative mt-20 w-full max-w-[36rem] border-[4px] border-tinta bg-durazno text-tinta sm:mt-24"
       >
         {/* Migo se asoma por el borde del papel, como una calcomanía pegada
             encima del aviso. Es donde su movimiento se lee mejor. */}
@@ -134,7 +134,7 @@ export function Aviso({ urlPlataforma }: { urlPlataforma: string }) {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => cerrar("entro")}
-              className="cartel flex items-center justify-between gap-4 bg-tinta px-5 py-4 text-[clamp(1.35rem,4.5vw,1.9rem)] leading-none text-papel no-underline transition-colors hover:bg-azul"
+              className="cartel flex items-center justify-between gap-4 bg-tinta px-5 py-4 text-[clamp(1.35rem,4.5vw,1.9rem)] leading-none text-papel no-underline transition-colors hover:bg-ciruela"
             >
               {perfil.aviso.accion}
               <Flecha className="h-[0.75em] w-[0.75em] shrink-0" />

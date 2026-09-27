@@ -66,7 +66,7 @@ export default async function PaginaProyecto({ params }: { params: Promise<{ slu
                 href={proyecto.repositorio}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rotulo border-t-[3px] border-tinta pt-3 text-sm hover:text-naranja"
+                className="rotulo border-t-[3px] border-tinta pt-3 text-sm hover:text-durazno"
               >
                 Código abierto en GitHub
               </a>
@@ -91,7 +91,7 @@ export default async function PaginaProyecto({ params }: { params: Promise<{ slu
         </CampoDeTinta>
       ) : null}
 
-      <CampoDeTinta tinta="verde">
+      <CampoDeTinta tinta="salvia">
         <Link href="/proyectos" className="cartel text-rotulo no-underline hover:underline">
           Ver los demás proyectos
         </Link>

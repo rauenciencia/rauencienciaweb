@@ -7,7 +7,7 @@ import { urlPlataforma } from "@/lib/sitio";
 
 export default function NoEncontrado() {
   return (
-    <CampoDeTinta tinta="naranja" trama className="min-h-[70dvh] pt-14">
+    <CampoDeTinta tinta="durazno" trama className="min-h-[70dvh] pt-14">
       <div className="flex flex-col gap-8">
         <h1 className="cartel text-titular max-w-[12ch]">Esta convocatoria ya cerró</h1>
         <Rotulo>Error 404</Rotulo>

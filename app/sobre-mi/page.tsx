@@ -47,7 +47,7 @@ export default function SobreMi() {
         </div>
       </CampoDeTinta>
 
-      <CampoDeTinta tinta="naranja" trama>
+      <CampoDeTinta tinta="durazno" trama>
         <div className="flex flex-col gap-8">
           <Rotulo>En números</Rotulo>
           <TiraDeCifras cifras={perfil.cifras} />

@@ -13,7 +13,7 @@ export function PieDePagina() {
   const anio = new Date().getFullYear();
 
   return (
-    <footer className="campo-azul bg-tinta px-5 py-pliego text-papel sm:px-8">
+    <footer className="campo-oscuro bg-tinta px-5 py-pliego text-papel sm:px-8">
       <div className="mx-auto flex w-full max-w-[78rem] flex-col gap-12">
         <div className="grid gap-10 sm:grid-cols-[1.4fr_1fr_1fr]">
           <div className="flex flex-col gap-4">
@@ -25,7 +25,7 @@ export function PieDePagina() {
                     href={red.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="cartel text-[clamp(1.6rem,5vw,2.4rem)] leading-tight text-papel no-underline transition-colors hover:text-naranja"
+                    className="cartel text-[clamp(1.6rem,5vw,2.4rem)] leading-tight text-papel no-underline transition-colors hover:text-durazno"
                   >
                     {red.rotulo}
                   </a>
