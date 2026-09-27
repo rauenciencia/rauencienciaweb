@@ -34,11 +34,11 @@ export default async function PaginaProyecto({ params }: { params: Promise<{ slu
     <>
       <CampoDeTinta tinta={proyecto.tinta} trama className="pt-10 sm:pt-14">
         <div className="flex flex-col gap-8">
+          <h1 className="cartel text-titular max-w-[11ch]">{proyecto.nombre}</h1>
           <Rotulo>
             {proyecto.anio} · {proyecto.estado}
             {proyecto.apodo ? ` · le dicen ${proyecto.apodo}` : ""}
           </Rotulo>
-          <h1 className="cartel text-titular max-w-[11ch]">{proyecto.nombre}</h1>
           <p className="prosa text-lg leading-snug font-medium sm:text-2xl">{proyecto.resumen}</p>
 
           {proyecto.enlace ? (

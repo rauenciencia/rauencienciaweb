@@ -14,6 +14,7 @@ export const urlPlataforma =
   process.env.NEXT_PUBLIC_URL_PLATAFORMA ?? "https://rauenciencia.com";
 
 export const navegacion = [
+  { rotulo: "Charlas", href: "/charlas" },
   { rotulo: "Sobre mí", href: "/sobre-mi" },
   { rotulo: "Proyectos", href: "/proyectos" },
   { rotulo: "Prensa", href: "/prensa" },

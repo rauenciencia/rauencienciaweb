@@ -71,9 +71,35 @@ export type Cobertura = {
   fecha: string;
 };
 
-export type Charla = {
+/** Una charla empaquetada, con nombre propio: lo que alguien puede contratar. */
+export type Tema = {
+  slug: string;
+  titulo: string;
+  /** Una línea. Es lo que decide si siguen leyendo. */
+  promesa: string;
+  descripcion: string;
+  /** Qué se lleva el público. Lo concreto, no los adjetivos. */
+  seLlevan: string[];
+  /** A qué tipo de organización le sirve. */
+  para: string;
+  tinta: Tinta;
+};
+
+/** Una charla ya dada. Solo entra lo que ocurrió de verdad. */
+export type Aparicion = {
   titulo: string;
   lugar: string;
   fecha: string;
   url?: string;
+};
+
+/**
+ * Un testimonio real, con nombre y cargo de quien lo dijo.
+ * Sin nombre verificable, no se publica.
+ */
+export type Testimonio = {
+  cita: string;
+  quien: string;
+  cargo: string;
+  organizacion: string;
 };

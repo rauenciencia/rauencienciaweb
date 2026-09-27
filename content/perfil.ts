@@ -76,6 +76,13 @@ export const perfil = {
   correo: "hola@rauenciencia.com",
   correoPorConfirmar: true,
 
+  /**
+   * Cómo te presentas en una línea, para quien te va a contratar.
+   * Los sitios de conferencistas viven de esta línea: dice qué eres antes de
+   * contar quién eres.
+   */
+  oficio: "Conferencista y divulgador de ciencia",
+
   /** Qué puede pedirte alguien que llega a /contacto. */
   para: [
     "Charlas y talleres sobre cómo buscar y ganar becas",
@@ -91,5 +98,32 @@ export const perfil = {
     src: "/retrato.jpg",
     alt: "Raúl Jáuregui Penny",
     porConfirmar: true,
+  },
+
+  /**
+   * MIGO, la mascota de Migajeando Oportunidades.
+   *
+   * PENDIENTE — busqué el archivo en tu repo `becas-para-migajear-v2` y no
+   * está ahí. Déjalo en `public/migo.png` (o `.svg`, y cambia la ruta acá),
+   * de preferencia con fondo transparente y al menos 800 px de alto, y quita
+   * `porConfirmar`.
+   *
+   * El sistema de movimiento ya está construido y funcionando: entra fuera de
+   * registro y calza, flota despacio, y se desfasa al tocarlo. En cuanto el
+   * archivo exista, Migo hereda todo eso sin tocar una línea de código.
+   */
+  migo: {
+    src: "/migo.png",
+    alt: "Migo, la mascota de Migajeando Oportunidades",
+    porConfirmar: true,
+  },
+
+  /** El aviso que salta al entrar. Es lo primero que lee la gente que llega de TikTok. */
+  aviso: {
+    titulo: "Hay 500 becas esperándote",
+    texto:
+      "Deslizas, te quedas con las que te sirven, y postulas en la fuente oficial. Gratis y sin descargar nada.",
+    accion: "Entrar a Becas para Migajear",
+    rechazo: "Ahora no",
   },
 } as const;

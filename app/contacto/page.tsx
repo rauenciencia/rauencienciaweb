@@ -1,7 +1,9 @@
+import Link from "next/link";
+
 import { CampoDeTinta } from "@/components/cartel/CampoDeTinta";
 import { FranjaDeAccion } from "@/components/cartel/FranjaDeAccion";
 import { Rotulo } from "@/components/cartel/Rotulo";
-import { charlas } from "@/content/charlas";
+import { temas } from "@/content/charlas";
 import { perfil } from "@/content/perfil";
 import { metadatos } from "@/lib/seo";
 
@@ -16,7 +18,6 @@ export default function Contacto() {
     <>
       <CampoDeTinta className="pt-10 sm:pt-14">
         <div className="flex flex-col gap-10">
-          <Rotulo>Contacto</Rotulo>
           <h1 className="cartel text-titular max-w-[9ch]">Escríbeme</h1>
 
           <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
@@ -65,39 +66,31 @@ export default function Contacto() {
         </div>
       </CampoDeTinta>
 
-      <CampoDeTinta tinta={charlas.length > 0 ? "verde" : "tinta"} trama={charlas.length > 0}>
+      <CampoDeTinta tinta="tinta">
         <div className="flex flex-col gap-8">
-          <Rotulo>Charlas y talleres</Rotulo>
-
-          {charlas.length === 0 ? (
-            <>
-              <h2 className="cartel text-rotulo max-w-[18ch]">
-                Todavía no hay ninguna publicada acá
-              </h2>
-              <p className="prosa text-lg leading-relaxed">
-                Prefiero dejar esta sección vacía antes que llenarla con relleno. En cuanto haya una
-                confirmada, aparece sola: se agrega en{" "}
-                <code className="rotulo text-[0.9em]">content/charlas.ts</code>.
-              </p>
-            </>
-          ) : (
-            <ul className="flex flex-col">
-              {charlas.map((charla) => (
-                <li
-                  key={`${charla.titulo}-${charla.fecha}`}
-                  className="grid gap-2 border-t-[3px] border-current py-5 last:border-b-[3px] sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8"
-                >
-                  <div className="flex flex-col gap-1">
-                    <h3 className="cartel text-[clamp(1.4rem,3.5vw,1.9rem)] leading-none">
-                      {charla.titulo}
-                    </h3>
-                    <p className="text-base opacity-90">{charla.lugar}</p>
-                  </div>
-                  <p className="rotulo text-sm opacity-90">{charla.fecha}</p>
-                </li>
-              ))}
-            </ul>
-          )}
+          <h2 className="cartel text-rotulo max-w-[18ch]">
+            Tengo {temas.length} charlas listas para dar
+          </h2>
+          <Rotulo>Charlas</Rotulo>
+          <ul className="flex flex-col">
+            {temas.map((tema) => (
+              <li
+                key={tema.slug}
+                className="grid gap-1 border-t-[3px] border-current py-4 last:border-b-[3px] sm:grid-cols-[1fr_1.3fr] sm:items-baseline sm:gap-8"
+              >
+                <h3 className="cartel text-[clamp(1.3rem,3.5vw,1.8rem)] leading-none">
+                  {tema.titulo}
+                </h3>
+                <p className="leading-snug opacity-90">{tema.promesa}</p>
+              </li>
+            ))}
+          </ul>
+          <Link
+            href="/charlas"
+            className="rotulo text-sm underline decoration-naranja decoration-[3px] underline-offset-[6px] hover:no-underline"
+          >
+            Ver de qué trata cada una
+          </Link>
         </div>
       </CampoDeTinta>
     </>

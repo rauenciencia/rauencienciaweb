@@ -18,7 +18,6 @@ export default function SobreMi() {
     <>
       <CampoDeTinta className="pt-10 sm:pt-14">
         <div className="flex flex-col gap-10">
-          <Rotulo>Sobre mí</Rotulo>
           <h1 className="cartel text-titular max-w-[11ch]">Migajeando oportunidades</h1>
 
           <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
@@ -57,8 +56,8 @@ export default function SobreMi() {
 
       <CampoDeTinta>
         <div className="flex flex-col gap-10">
-          <Rotulo>Cómo llegué acá</Rotulo>
           <h2 className="cartel text-rotulo max-w-[16ch]">Una convocatoria a la vez</h2>
+          <Rotulo>Cómo llegué acá</Rotulo>
           <LineaDeTiempo hitos={trayectoria} />
         </div>
       </CampoDeTinta>

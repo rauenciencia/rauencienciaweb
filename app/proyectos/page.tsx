@@ -18,7 +18,6 @@ export default function Proyectos() {
     <>
       <CampoDeTinta className="pt-10 sm:pt-14">
         <div className="flex flex-col gap-8">
-          <Rotulo>Proyectos</Rotulo>
           <h1 className="cartel text-titular max-w-[10ch]">Lo que he construido</h1>
           <p className="prosa text-lg leading-snug font-medium sm:text-2xl">
             Herramientas que existen porque me hicieron falta a mí primero.
@@ -35,12 +34,12 @@ export default function Proyectos() {
             className="group grid gap-6 no-underline lg:grid-cols-[1.3fr_1fr] lg:gap-14"
           >
             <div className="flex flex-col gap-5">
-              <Rotulo>
-                {proyecto.anio} · {proyecto.estado}
-              </Rotulo>
               <h2 className="cartel text-rotulo max-w-[14ch] group-hover:underline decoration-[5px] underline-offset-[8px]">
                 {proyecto.nombre}
               </h2>
+              <Rotulo>
+                {proyecto.anio} · {proyecto.estado}
+              </Rotulo>
               <p className="prosa text-lg leading-snug font-medium sm:text-xl">{proyecto.resumen}</p>
               <span className="rotulo mt-2 flex items-center gap-3 text-sm">
                 Ver el proyecto

@@ -211,3 +211,111 @@ a {
     word-break: break-all;
   }
 }
+
+/* --------------------------------------------------------------------------
+   MIGO. La mascota entra como una capa de tinta más: llega fuera de registro,
+   calza, y después respira. Nada de rebotes de juguete — el movimiento es el
+   del oficio, no el de un GIF.
+   -------------------------------------------------------------------------- */
+
+@keyframes migo-entra {
+  from {
+    opacity: 0;
+    transform: translate3d(-1.1rem, 1.4rem, 0) rotate(-4deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+
+@keyframes migo-respira {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, -0.5rem, 0) rotate(1.2deg);
+  }
+}
+
+.migo {
+  transform-origin: 50% 90%;
+  will-change: transform;
+}
+
+/* Dos capas de animación anidadas: la de fuera respira siempre, la de dentro
+   entra una sola vez. Así una no pisa a la otra. */
+.migo-respira {
+  animation: migo-respira 5200ms cubic-bezier(0.37, 0, 0.63, 1) infinite;
+}
+
+.migo-entra {
+  animation: migo-entra 1100ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--migo-retraso, 0ms);
+}
+
+/* Al tocarlo, se sale de registro como una plancha mal calzada y vuelve. */
+.migo-vivo {
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.migo-vivo:hover,
+.migo-vivo:focus-visible {
+  transform: translate3d(0.4rem, -0.6rem, 0) rotate(-3deg) scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .migo-respira,
+  .migo-entra {
+    animation: none !important;
+  }
+  .migo-vivo:hover,
+  .migo-vivo:focus-visible {
+    transform: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   EL AVISO. El cartel pegado encima del cartel: entra como un papel que
+   alguien acaba de pegar en la pared, no como un modal que se desvanece.
+   -------------------------------------------------------------------------- */
+
+@keyframes aviso-pega {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 2.5rem, 0) rotate(-1.2deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+
+@keyframes fondo-entra {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.aviso-fondo {
+  animation: fondo-entra 320ms ease-out both;
+}
+
+.aviso-papel {
+  animation: aviso-pega 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aviso-fondo,
+  .aviso-papel {
+    animation-duration: 1ms !important;
+  }
+}
+
+/* Mientras el aviso está abierto, el pliego de atrás no se desplaza. */
+body[data-aviso="abierto"] {
+  overflow: hidden;
+}

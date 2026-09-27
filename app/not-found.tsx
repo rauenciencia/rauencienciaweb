@@ -9,8 +9,8 @@ export default function NoEncontrado() {
   return (
     <CampoDeTinta tinta="naranja" trama className="min-h-[70dvh] pt-14">
       <div className="flex flex-col gap-8">
-        <Rotulo>Error 404</Rotulo>
         <h1 className="cartel text-titular max-w-[12ch]">Esta convocatoria ya cerró</h1>
+        <Rotulo>Error 404</Rotulo>
         <p className="prosa text-lg leading-snug font-medium sm:text-2xl">
           La página que buscabas no existe o cambió de dirección. Las que sí siguen abiertas están
           acá abajo.

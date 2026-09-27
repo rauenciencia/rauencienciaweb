@@ -2,11 +2,12 @@ import type { Metadata, Viewport } from "next";
 import { Archivo, Big_Shoulders } from "next/font/google";
 
 import { ContratoDeDireccion } from "./contrato";
+import { Aviso } from "@/components/cartel/Aviso";
 import { Encabezado } from "@/components/layout/Encabezado";
 import { PieDePagina } from "@/components/layout/PieDePagina";
 import { personaJsonLd } from "@/lib/jsonld";
 import { metadatos } from "@/lib/seo";
-import { sitio } from "@/lib/sitio";
+import { sitio, urlPlataforma } from "@/lib/sitio";
 import "./globals.css";
 
 /** La voz del cartel: condensada, de alto contraste, pensada para gritar. */
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Encabezado />
         <main id="contenido">{children}</main>
         <PieDePagina />
+        <Aviso urlPlataforma={urlPlataforma} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personaJsonLd()) }}

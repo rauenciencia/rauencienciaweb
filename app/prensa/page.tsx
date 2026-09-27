@@ -17,7 +17,6 @@ export default function Prensa() {
     <>
       <CampoDeTinta tinta="azul" className="pt-10 sm:pt-14">
         <div className="flex flex-col gap-8">
-          <Rotulo>Prensa</Rotulo>
           <h1 className="cartel text-titular max-w-[12ch]">Lo que escribieron otros</h1>
           <p className="prosa text-lg leading-snug font-medium sm:text-2xl">
             Todo lo que este sitio afirma sobre mí está en alguno de estos enlaces. Si necesitas

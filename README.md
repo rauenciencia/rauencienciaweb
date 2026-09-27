@@ -28,6 +28,7 @@ si no quieres arriesgar la plataforma en plena racha de prensa.
 propósito, para que no se te pasen:
 
 - Tu retrato → deja el archivo en `public/retrato.jpg` y quita `porConfirmar` en `content/perfil.ts`.
+- **Migo** → deja el archivo en `public/migo.png` (fondo transparente, mínimo 800 px de alto) y quita `porConfirmar` en `perfil.migo`. Lo busqué en tu repo `becas-para-migajear-v2` y no está ahí. El movimiento ya está hecho y funcionando: en cuanto exista el archivo, Migo lo hereda sin tocar código.
 - Tu correo de contacto → `perfil.correo`.
 - Las URLs reales de tus redes → `perfil.redes`.
 - Los años exactos de tu trayectoria → `content/trayectoria.ts`.
@@ -63,11 +64,13 @@ content/          ← LO ÚNICO QUE EDITAS TÚ
   proyectos.ts      tus proyectos (el que tenga `insignia: true` manda la portada)
   trayectoria.ts    la línea de tiempo de /sobre-mi
   prensa.ts         cobertura de medios, con enlace y fecha
-  charlas.ts        charlas y talleres (hoy vacío, a propósito)
+  charlas.ts        tus charlas con nombre propio, lo práctico, apariciones
+                    y testimonios (los dos últimos vacíos, a propósito)
   tipos.ts          los tipos de TypeScript que comparten todos los anteriores
 
 app/              rutas (App Router)
   page.tsx          portada — el cartel
+  charlas/          la página de conferencista: charlas, lo práctico, prueba
   sobre-mi/         historia larga, ficha y trayectoria
   proyectos/        índice + /proyectos/[slug] generado desde content/proyectos.ts
   prensa/           toda la cobertura
@@ -79,7 +82,7 @@ app/              rutas (App Router)
 
 components/
   cartel/           las piezas del cartel: campos de tinta, titular, franja de
-                    acción, tira de cifras, rótulos, la flecha
+                    acción, tira de cifras, rótulos, la flecha, Migo y el aviso
   contenido/        piezas que muestran datos: retrato, pasos, prensa, línea de tiempo
   layout/           encabezado y pie
 
@@ -100,7 +103,10 @@ DESIGN.md         el sistema visual escrito a partir del sitio ya construido.
 | Cambiar el titular de la portada | `content/perfil.ts` → `titular` (3 líneas) |
 | Agregar un proyecto | `content/proyectos.ts`: copio un bloque y cambio el `slug`. La página `/proyectos/<slug>` se genera sola |
 | Agregar una nota de prensa | `content/prensa.ts`, arriba del todo |
-| Agregar una charla | `content/charlas.ts`. Al agregar la primera, la sección aparece sola en `/contacto` |
+| Cambiar una charla | `content/charlas.ts` → `temas`. Son tres borradores con tu historia real: ajústalos hasta que suenen a ti |
+| Registrar dónde diste una charla | `content/charlas.ts` → `apariciones`. La sección aparece sola con la primera |
+| Agregar un testimonio | `content/charlas.ts` → `testimonios`. Pídelo por escrito después de cada charla y pégalo tal cual. **Nunca inventes uno con el nombre de una institución real** |
+| Cambiar el texto del aviso que salta al entrar | `content/perfil.ts` → `aviso` |
 | Corregir una cifra | `content/perfil.ts` → `cifras`. **Toda cifra necesita `fuente`**: sin fuente, no se publica |
 
 ---
@@ -126,11 +132,30 @@ no se combinan a mano — se elige la tinta y el par viene completo:
 **Tipografía.** *Big Shoulders* condensada para todo lo que grita (titulares,
 cifras, rótulos) y *Archivo* para lo que se lee de corrido.
 
-**Movimiento.** Uno solo, y es del oficio: al cargar, las líneas del titular
-entran fuera de registro y calzan, como una prensa ajustando la plancha. Al
-tocar la acción principal, la capa de tinta se vuelve a salir un par de píxeles
-— se mueve la plancha, nunca las letras que estás leyendo. Todo se apaga con
-`prefers-reduced-motion`.
+**Movimiento.** Todo sale de la misma idea, el calce de registro de una prensa:
+
+- Al cargar, las líneas del titular entran fuera de registro y calzan.
+- Al tocar la acción principal, la capa de tinta se vuelve a salir un par de
+  píxeles — se mueve la plancha, nunca las letras que estás leyendo.
+- **Migo** entra desplazado y girado, calza, y después respira: una flotación
+  lenta de 5,2 s. Al tocarlo se desfasa y vuelve. Nada de rebotes de juguete.
+- El aviso entra como un papel recién pegado en la pared, no como un modal que
+  se desvanece.
+
+Todo se apaga con `prefers-reduced-motion`.
+
+**El aviso de entrada.** Salta a los 0,7 s porque casi todo el tráfico llega de
+un enlace en bio y se va en segundos. Lo que evita que sea una plaga: sale una
+sola vez por navegador, se cierra con Escape, con el fondo y con un botón que
+dice lo que hace, el foco entra y se queda dentro mientras está abierto, y si el
+navegador bloquea el almacenamiento el aviso simplemente no aparece.
+
+**La parte de conferencista.** Tus dos referencias (Josh Sundquist y Kindra
+Hall) se sostienen sobre lo mismo: charlas con nombre propio, no "temas de
+interés". Una charla empaquetada se puede contratar; un tema suelto, no. Por eso
+`/charlas` lleva tres charlas con título, promesa, qué se lleva el público y
+para quién es — más lo práctico (duración, modalidad, idioma, público) para
+ahorrarte el primer correo de ida y vuelta.
 
 **Impresión.** `/sobre-mi` está pensada para imprimirse: en papel el cartel
 vuelve a ser blanco y negro y sirve de CV.
@@ -155,6 +180,8 @@ vuelve a ser blanco y negro y sirve de CV.
 ## Antes de publicar
 
 - [ ] Retrato en `public/retrato.jpg`
+- [ ] Migo en `public/migo.png`
+- [ ] Las tres charlas de `content/charlas.ts` redactadas con tus palabras
 - [ ] Correo real en `perfil.correo`
 - [ ] URLs de redes verificadas una por una
 - [ ] Años de la trayectoria corregidos
