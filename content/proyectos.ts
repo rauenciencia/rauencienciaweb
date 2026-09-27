@@ -17,7 +17,7 @@ export const proyectos: Proyecto[] = [
       "Más de 500 becas, prácticas, voluntariados y concursos reales, en una pantalla donde deslizas hasta quedarte con los que sí te sirven.",
     descripcion: [
       "Las oportunidades de estudio existen y están publicadas. El problema es que están repartidas entre decenas de sitios oficiales, en convocatorias que se cierran sin aviso y en PDF que nadie termina de leer. La respuesta habitual es un Excel compartido: alguien lo arma, todos lo abren una vez y nadie vuelve.",
-      "Becas para Migajear toma esa misma información pública —de gobiernos, universidades y organismos internacionales— y la entrega con la mecánica que esta generación ya usa sin pensar. Defines tu perfil de estudio, deslizas a la derecha lo que te sirve y a la izquierda lo que no, y terminas con tu lista corta.",
+      "Becas para Migajear toma esa misma información pública, de gobiernos, universidades y organismos internacionales, y la entrega con la mecánica que esta generación ya usa sin pensar. Defines tu perfil de estudio, deslizas a la derecha lo que te sirve y a la izquierda lo que no, y terminas con tu lista corta.",
       "Funciona en el navegador, no hay app que descargar, y es gratuita.",
     ],
     comoFunciona: [
@@ -39,7 +39,7 @@ export const proyectos: Proyecto[] = [
     slug: "simulador-prima",
     nombre: "Simulador de decisiones",
     resumen:
-      "Encuesta de feria en tres rutas de cinco preguntas —decisiones financieras, empleabilidad y ciberseguridad— que te dice al instante si acertaste y por qué.",
+      "Encuesta de feria en tres rutas de cinco preguntas (decisiones financieras, empleabilidad y ciberseguridad) que te dice al instante si acertaste y por qué.",
     descripcion: [
       "Una persona escanea un código QR, responde en dos minutos y ve al instante si su respuesta fue la mejor opción y cuál era el razonamiento detrás. Quien organiza la feria ve las respuestas llegar en tiempo real desde el celular.",
       "Construido para stands y ferias, donde nadie va a instalar nada y el tiempo de atención se mide en segundos.",

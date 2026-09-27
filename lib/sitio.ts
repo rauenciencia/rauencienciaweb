@@ -39,17 +39,38 @@ export const urlPlataforma = leerUrl(process.env.NEXT_PUBLIC_URL_PLATAFORMA, RES
   permitirRuta: true,
 });
 
+/**
+ * Navegación principal (brief 5). "Becas" apunta a la plataforma mientras
+ * no esté montada en /becas; cuando lo esté, basta con cambiar
+ * NEXT_PUBLIC_URL_PLATAFORMA a "/becas".
+ */
 export const navegacion = [
+  { rotulo: "Becas", href: urlPlataforma },
   { rotulo: "Charlas", href: "/charlas" },
-  { rotulo: "Sobre mí", href: "/sobre-mi" },
-  { rotulo: "Proyectos", href: "/proyectos" },
-  { rotulo: "Prensa", href: "/prensa" },
-  { rotulo: "Contacto", href: "/contacto" },
+  { rotulo: "Agenda", href: "/agenda" },
+  { rotulo: "Asesorías", href: "/asesorias" },
 ] as const;
+
+export const aprende = [
+  { rotulo: "Escuelita Migajera", href: "/escuelita", detalle: "Talleres para ganar becas desde cero" },
+  { rotulo: "Recursos gratis", href: "/recursos", detalle: "Roadmap, guías y plantillas" },
+  { rotulo: "Tienda", href: "/recursos#tienda", detalle: "CV y Carta Migajera" },
+  { rotulo: "Causas que promuevo", href: "/causas", detalle: "Educación, ciencia, IA e inclusión" },
+] as const;
+
+export const navegacionFinal = { rotulo: "Sobre mí", href: "/sobre-mi" } as const;
 
 export const sitio = {
   nombre: perfil.nombre,
-  titulo: `${perfil.nombre} — ${perfil.alias}`,
+  titulo: `${perfil.nombre} · ${perfil.alias}`,
   descripcion: perfil.bioCorta,
   idioma: "es-PE",
 } as const;
+
+/**
+ * Clave con la que se recuerda el anuncio cerrado. Vive aquí, en un módulo
+ * común, porque la usan el servidor (el guion previo al pintado) y el cliente
+ * (el botón de cerrar). Exportada desde un archivo "use client" le llegaría
+ * al servidor como referencia y no como texto.
+ */
+export const CLAVE_ANUNCIO = "rau_anuncio_cerrado";

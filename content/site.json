@@ -1,0 +1,17 @@
+{
+  "nombre": "Raúl Jáuregui Penny",
+  "handle": "@rauenciencia",
+  "lema": "Oportunidades para quienes no tienen contactos (todavía).",
+  "email": null,
+  "whatsapp": null,
+  "comunidadUrl": null,
+  "roadmapUrl": null,
+  "ciudad": "Lima, Perú",
+  "redes": [
+    { "nombre": "Instagram", "usuario": "@rauenciencia", "url": "https://www.instagram.com/rauenciencia/" },
+    { "nombre": "TikTok", "usuario": "@rauencienciaa", "url": "https://www.tiktok.com/@rauencienciaa" },
+    { "nombre": "LinkedIn", "usuario": "rauljpenny", "url": "https://www.linkedin.com/in/rauljpenny/" },
+    { "nombre": "Instagram", "usuario": "@migajeando.oportunidades", "url": "https://www.instagram.com/migajeando.oportunidades/" },
+    { "nombre": "Podcast", "usuario": "Ambientalmente Incorrectos", "url": null }
+  ]
+}

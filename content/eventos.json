@@ -1,0 +1,62 @@
+[
+  {
+    "id": "escuelita-migajera-2026",
+    "titulo": "Escuelita Migajera",
+    "fecha": "2026-09-26",
+    "fechaFin": "2026-12-13",
+    "lugar": "Virtual y presencial",
+    "ciudad": null,
+    "modalidad": "híbrido",
+    "rol": "Organizador",
+    "tipo": "Organizo",
+    "descripcion": "Un ciclo de 12 talleres para ganar becas desde cero.",
+    "link": null,
+    "estado": "abierto",
+    "confirmar": true
+  },
+  {
+    "id": "ideathon-suenia-en-grande",
+    "titulo": "Ideathon Sueñ-IA en Grande",
+    "fecha": "2026-10-17",
+    "fechaFin": null,
+    "lugar": "Aula Magna UTEC",
+    "ciudad": "Lima",
+    "modalidad": "presencial",
+    "rol": "Organizador",
+    "tipo": "Organizo",
+    "descripcion": "Miss Yera × Rauenciencia.",
+    "link": null,
+    "estado": "abierto",
+    "confirmar": true
+  },
+  {
+    "id": "taller-arequipa-2026",
+    "titulo": "Taller Migajeando Oportunidades en Arequipa",
+    "fecha": "2026-10-24",
+    "fechaFin": null,
+    "lugar": "[PLACEHOLDER lugar]",
+    "ciudad": "Arequipa",
+    "modalidad": "presencial",
+    "rol": "Ponente",
+    "tipo": "Taller",
+    "descripcion": "Un día completo para aprender a buscar y postular a becas.",
+    "link": null,
+    "estado": "abierto",
+    "confirmar": true
+  },
+  {
+    "id": "encuentro-lideres-migajeros-3",
+    "titulo": "Encuentro de Líderes Migajeros · 3.ª edición",
+    "fecha": null,
+    "fechaFin": null,
+    "lugar": "[PLACEHOLDER lugar]",
+    "ciudad": null,
+    "modalidad": "presencial",
+    "rol": "Organizador",
+    "tipo": "Organizo",
+    "descripcion": "[PLACEHOLDER descripción]",
+    "link": null,
+    "estado": "abierto",
+    "confirmar": true
+  }
+]

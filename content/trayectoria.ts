@@ -3,7 +3,7 @@ import type { Hito } from "./tipos";
 /**
  * La línea de tiempo de /sobre-mi.
  *
- * PENDIENTE — los años exactos de los primeros hitos no están confirmados en
+ * PENDIENTE: los años exactos de los primeros hitos no están confirmados en
  * fuentes públicas. Corrígelos antes de publicar: es el tipo de dato que un
  * periodista va a citar.
  */

@@ -1,28 +1,48 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, Big_Shoulders } from "next/font/google";
+import { Big_Shoulders, Bricolage_Grotesque, Caveat, DM_Sans } from "next/font/google";
 
 import { ContratoDeDireccion } from "./contrato";
 import { Aviso } from "@/components/cartel/Aviso";
-import { Encabezado } from "@/components/layout/Encabezado";
-import { PieDePagina } from "@/components/layout/PieDePagina";
+import { BarraAnuncio } from "@/components/layout/BarraAnuncio";
+import { BotonWhatsApp } from "@/components/layout/BotonWhatsApp";
+import { NavPildora } from "@/components/layout/NavPildora";
+import { Pie } from "@/components/layout/Pie";
+import { anuncio, site } from "@/lib/contenido";
 import { personaJsonLd } from "@/lib/jsonld";
 import { metadatos } from "@/lib/seo";
-import { sitio, urlPlataforma, urlSitio } from "@/lib/sitio";
+import { CLAVE_ANUNCIO, sitio, urlPlataforma, urlSitio } from "@/lib/sitio";
 import "./globals.css";
 
-/** La voz del cartel: condensada, de alto contraste, pensada para gritar. */
+/** Titulares: cálida, con personalidad, variable (brief 9.3). */
+const fuenteTitular = Bricolage_Grotesque({
+  subsets: ["latin"],
+  weight: ["700", "800"],
+  variable: "--fuente-titular",
+  display: "swap",
+});
+
+/** Carteles, fechas, cifras y stickers. Siempre en mayúsculas. */
 const fuenteCartel = Big_Shoulders({
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
+  // Variable con eje óptico: en .cartel se fija opsz 72, que es el corte Display.
+  axes: ["opsz"],
   variable: "--fuente-cartel",
   display: "swap",
 });
 
-/** El texto de lectura: grotesca de imprenta, sobria y sin adornos. */
-const fuenteTexto = Archivo({
+/** Texto de lectura. Ya es parte de la identidad migajera. */
+const fuenteTexto = DM_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "700"],
   variable: "--fuente-texto",
+  display: "swap",
+});
+
+/** Notas a mano junto a las fotos. Poco y con intención. */
+const fuenteMano = Caveat({
+  subsets: ["latin"],
+  weight: ["600"],
+  variable: "--fuente-mano",
   display: "swap",
 });
 
@@ -34,24 +54,36 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f0e7d3",
+  themeColor: "#0f3d2e",
   colorScheme: "light",
 };
 
+/** Un id por texto: si el anuncio cambia, vuelve a mostrarse aunque se haya cerrado el anterior. */
+const idAnuncio = `a${Array.from(anuncio.texto).reduce((h, c) => (h * 31 + c.charCodeAt(0)) | 0, 7)}`;
+const anuncioVigente = anuncio.activo && (!anuncio.fechaFin || anuncio.fechaFin >= new Date().toISOString().slice(0, 10));
+
+/** Corre antes de pintar: si este anuncio ya se cerró, se oculta desde el primer cuadro. */
+const guionAnuncio = `try{if(localStorage.getItem(${JSON.stringify(CLAVE_ANUNCIO)})===${JSON.stringify(idAnuncio)})document.documentElement.dataset.anuncioCerrado="1"}catch(e){}`;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang={sitio.idioma} className={`${fuenteCartel.variable} ${fuenteTexto.variable}`}>
-      <body className="min-h-dvh overflow-x-hidden">
+    <html lang={sitio.idioma} suppressHydrationWarning className={`${fuenteTitular.variable} ${fuenteCartel.variable} ${fuenteTexto.variable} ${fuenteMano.variable}`}>
+      <body className="min-h-dvh overflow-x-clip">
         <ContratoDeDireccion />
+        <script dangerouslySetInnerHTML={{ __html: guionAnuncio }} />
         <a
           href="#contenido"
-          className="rotulo sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-tinta focus:px-4 focus:py-3 focus:text-papel"
+          className="sr-only rounded-full focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-bosque focus:px-5 focus:py-3 focus:font-bold focus:text-crema"
         >
           Saltar al contenido
         </a>
-        <Encabezado />
+        {anuncioVigente ? (
+          <BarraAnuncio id={idAnuncio} texto={anuncio.texto} textoLink={anuncio.textoLink} link={anuncio.link} />
+        ) : null}
+        <NavPildora />
         <main id="contenido">{children}</main>
-        <PieDePagina />
+        <Pie />
+        <BotonWhatsApp numero={site.whatsapp} />
         <Aviso urlPlataforma={urlPlataforma} />
         <script
           type="application/ld+json"

@@ -1,0 +1,8 @@
+[
+  { "nombre": "Sistema Migajero para Becas", "descripcion": "[PLACEHOLDER descripción]", "precioTexto": "[PLACEHOLDER precio]", "link": null, "orden": 1 },
+  { "nombre": "Plantilla Migajera de CV", "descripcion": "[PLACEHOLDER descripción]", "precioTexto": "[PLACEHOLDER precio]", "link": null, "orden": 2 },
+  { "nombre": "CV Migajero Corporativo Pro", "descripcion": "[PLACEHOLDER descripción]", "precioTexto": "[PLACEHOLDER precio]", "link": null, "orden": 3 },
+  { "nombre": "CV Migajero Académico Pro", "descripcion": "[PLACEHOLDER descripción]", "precioTexto": "[PLACEHOLDER precio]", "link": null, "orden": 4 },
+  { "nombre": "Carta Migajera Pro (STEM)", "descripcion": "[PLACEHOLDER descripción]", "precioTexto": "[PLACEHOLDER precio]", "link": null, "orden": 5 },
+  { "nombre": "Carta Migajera Pro (Humanidades)", "descripcion": "[PLACEHOLDER descripción]", "precioTexto": "[PLACEHOLDER precio]", "link": null, "orden": 6 }
+]

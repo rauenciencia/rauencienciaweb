@@ -1,0 +1,6 @@
+[
+  { "numero": 15, "prefijo": "+", "sufijo": "", "etiqueta": "becas e intercambios ganados", "confirmar": true, "nota": "En Beacons dice +25. Unificar." },
+  { "numero": 2, "prefijo": "", "sufijo": "x", "etiqueta": "speaker TEDx", "confirmar": false },
+  { "numero": 500, "prefijo": "+", "sufijo": "", "etiqueta": "oportunidades verificadas en el Tinder", "confirmar": false, "nota": "La base v2 tiene 506." },
+  { "numero": 1000, "prefijo": "+", "sufijo": "", "etiqueta": "jóvenes en mis talleres", "confirmar": true }
+]

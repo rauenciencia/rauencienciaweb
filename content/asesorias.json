@@ -1,0 +1,29 @@
+[
+  {
+    "id": "diagnostico",
+    "nombre": "Diagnóstico migajero",
+    "duracion": "30 min",
+    "precioTexto": "[PLACEHOLDER precio]",
+    "incluye": ["Revisamos tu perfil", "Te armo tu ruta de postulación"],
+    "destacado": false,
+    "confirmar": true
+  },
+  {
+    "id": "cv-carta",
+    "nombre": "Revisión de CV y Carta",
+    "duracion": "60 min",
+    "precioTexto": "[PLACEHOLDER precio]",
+    "incluye": ["Inventario de Experiencias", "CV Migajero", "Carta Migajera"],
+    "destacado": true,
+    "confirmar": true
+  },
+  {
+    "id": "acompanamiento",
+    "nombre": "Acompañamiento de postulación",
+    "duracion": "Paquete de sesiones",
+    "precioTexto": "[PLACEHOLDER precio]",
+    "incluye": ["[PLACEHOLDER qué incluye]"],
+    "destacado": false,
+    "confirmar": true
+  }
+]

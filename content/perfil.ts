@@ -4,8 +4,8 @@ import type { Cifra, Ficha, Red } from "./tipos";
  * Quién eres. Esto es lo primero que hay que revisar antes de publicar.
  *
  * Todo lo que está aquí sin la marca "PENDIENTE" viene de prensa publicada en
- * agosto de 2026 (La República, Infobae, El Peruano). Si algo cambió —la edad,
- * el año de carrera, el número de becas— se corrige aquí y cambia en todo el
+ * agosto de 2026 (La República, Infobae, El Peruano). Si algo cambió (la edad,
+ * el año de carrera, el número de becas) se corrige aquí y cambia en todo el
  * sitio a la vez.
  */
 export const perfil = {
@@ -38,7 +38,7 @@ export const perfil = {
     { etiqueta: "De", valor: "Lima Este, Perú" },
     { etiqueta: "Estudia", valor: "Ingeniería Ambiental" },
     { etiqueta: "En", valor: "Universidad Peruana Cayetano Heredia" },
-    { etiqueta: "Llegó con", valor: "Beca 18 — Pronabec" },
+    { etiqueta: "Llegó con", valor: "Beca 18 (Pronabec)" },
   ] satisfies Ficha[],
 
   /** Las cifras del cartel. Cada una con su fuente. Sin fuente, no entra. */
@@ -61,7 +61,7 @@ export const perfil = {
   ] satisfies Cifra[],
 
   /**
-   * PENDIENTE — reemplaza estas URLs por las tuyas antes de publicar.
+   * PENDIENTE: reemplaza estas URLs por las tuyas antes de publicar.
    * Están marcadas `porConfirmar` a propósito: mientras la marca esté puesta,
    * `npm run build` las deja pasar pero el README te las lista como deuda.
    */
@@ -72,7 +72,7 @@ export const perfil = {
     { nombre: "Linktree", rotulo: "Todos los enlaces", url: "https://linktr.ee/rauenciencia", porConfirmar: true },
   ] satisfies Red[],
 
-  /** PENDIENTE — pon aquí el correo que quieres que la gente use. */
+  /** PENDIENTE: pon aquí el correo que quieres que la gente use. */
   correo: "hola@rauenciencia.com",
   correoPorConfirmar: true,
 
@@ -91,7 +91,7 @@ export const perfil = {
   ],
 
   /**
-   * PENDIENTE — tu retrato. Deja el archivo en `public/retrato.jpg`
+   * PENDIENTE: tu retrato. Deja el archivo en `public/retrato.jpg`
    * (vertical, mínimo 1200 px de alto) y quita `porConfirmar`.
    */
   retrato: {
@@ -103,7 +103,7 @@ export const perfil = {
   /**
    * MIGO, la mascota de Migajeando Oportunidades.
    *
-   * PENDIENTE — busqué el archivo en tu repo `becas-para-migajear-v2` y no
+   * PENDIENTE: busqué el archivo en tu repo `becas-para-migajear-v2` y no
    * está ahí. Déjalo en `public/migo.png` (o `.svg`, y cambia la ruta acá),
    * de preferencia con fondo transparente y al menos 800 px de alto, y quita
    * `porConfirmar`.
